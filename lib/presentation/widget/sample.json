@@ -1,0 +1,195 @@
+{
+  "status": 200,
+  "data": {
+    "tabFilter": [
+      {"id": "1", "title": "Date", "type": "date"},
+      {
+        "id": "2",
+        "title": "POS",
+        "type": "pos",
+        "data": [
+          {"id": "1", "title": "Parvat Patiya, Surat"},
+          {"id": "2", "title": "Pal, Surat"}
+        ]
+      },
+      {"id": "3", "title": "Group", "type": "group"}
+    ],
+    "groupData": [
+      {"id": 1, "title": "Group 1", "color": "#6AB6F0"},
+      {"id": 2, "title": "Group 2", "color": "#C22D3A"},
+      {"id": 3, "title": "Group 3", "color": "#68A44A"}
+    ],
+    "daily": [
+      {
+        "date": "05 NOV 2025",
+        "values": [6, 2, 2],
+        "colors": ["#6AB6F0", "#C22D3A", "#68A44A"],
+        "average": "54%"
+      },
+      {
+        "date": "06 NOV 2025",
+        "values": [5, 3, 1],
+        "colors": ["#6AB6F0", "#C22D3A", "#68A44A"],
+        "average": "62%"
+      },
+      {
+        "date": "07 NOV 2025",
+        "values": [4, 4, 2],
+        "colors": ["#6AB6F0", "#C22D3A", "#68A44A"],
+        "average": "71%"
+      },
+      {
+        "date": "08 NOV 2025",
+        "values": [7, 2, 1],
+        "colors": ["#6AB6F0", "#C22D3A", "#68A44A"],
+        "average": "80%"
+      },
+      {
+        "date": "09 NOV 2025",
+        "values": [3, 5, 2],
+        "colors": ["#6AB6F0", "#C22D3A", "#68A44A"],
+        "average": "27%"
+      },
+      {
+        "date": "09 NOV 2025",
+        "values": [3, 5, 2],
+        "colors": ["#6AB6F0", "#C22D3A", "#68A44A"],
+        "average": "57%"
+      },
+      {
+        "date": "10 NOV 2025",
+        "values": [3, 5, 2],
+        "colors": ["#6AB6F0", "#C22D3A", "#68A44A"],
+        "average": "57%"
+      },
+      {
+        "date": "11 NOV 2025",
+        "values": [3, 5, 2],
+        "colors": ["#6AB6F0", "#C22D3A", "#68A44A"],
+        "average": "57%"
+      },
+      {
+        "date": "12 NOV 2025",
+        "values": [3, 5, 2],
+        "colors": ["#6AB6F0", "#C22D3A", "#68A44A"],
+        "average": "57%"
+      },
+      {
+        "date": "13 NOV 2025",
+        "values": [3, 5, 2],
+        "colors": ["#6AB6F0", "#C22D3A", "#68A44A"],
+        "average": "57%"
+      },
+      {
+        "date": "14 NOV 2025",
+        "values": [3, 5, 2],
+        "colors": ["#6AB6F0", "#C22D3A", "#68A44A"],
+        "average": "57%"
+      },
+      {
+        "date": "15 NOV 2025",
+        "values": [3, 5, 2],
+        "colors": ["#6AB6F0", "#C22D3A", "#68A44A"],
+        "average": "57%"
+      },
+      {
+        "date": "16 NOV 2025",
+        "values": [3, 5, 2],
+        "colors": ["#6AB6F0", "#C22D3A", "#68A44A"],
+        "average": "57%"
+      },
+      {
+        "date": "17 NOV 2025",
+        "values": [3, 5, 2],
+        "colors": ["#6AB6F0", "#C22D3A", "#68A44A"],
+        "average": "57%"
+      },
+      {
+        "date": "18 NOV 2025",
+        "values": [3, 5, 2],
+        "colors": ["#6AB6F0", "#C22D3A", "#68A44A"],
+        "average": "57%"
+      },
+      {
+        "date": "19 NOV 2025",
+        "values": [3, 5, 2],
+        "colors": ["#6AB6F0", "#C22D3A", "#68A44A"],
+        "average": "57%"
+      },
+      {
+        "date": "20 NOV 2025",
+        "values": [3, 5, 2],
+        "colors": ["#6AB6F0", "#C22D3A", "#68A44A"],
+        "average": "57%"
+      },
+      {
+        "date": "21 NOV 2025",
+        "values": [3, 5, 2],
+        "colors": ["#6AB6F0", "#C22D3A", "#68A44A"],
+        "average": "57%"
+      }
+    ],
+    "weekly": [
+      {
+        "date": "05-10 NOV 2025",
+        "values": [6, 2, 2],
+        "colors": ["#6AB6F0", "#C22D3A", "#68A44A"],
+        "average": "54%"
+      },
+      {
+        "date": "10-15 NOV 2025",
+        "values": [5, 3, 1],
+        "colors": ["#6AB6F0", "#C22D3A", "#68A44A"],
+        "average": "62%"
+      },
+      {
+        "date": "15-20 NOV 2025",
+        "values": [4, 4, 2],
+        "colors": ["#6AB6F0", "#C22D3A", "#68A44A"],
+        "average": "71%"
+      },
+      {
+        "date": "20-25 NOV 2025",
+        "values": [7, 2, 1],
+        "colors": ["#6AB6F0", "#C22D3A", "#68A44A"],
+        "average": "80%"
+      },
+      {
+        "date": "25-30 NOV 2025",
+        "values": [3, 5, 2],
+        "colors": ["#6AB6F0", "#C22D3A", "#68A44A"],
+        "average": "27%"
+      },
+      {
+        "date": "30-5 DEC 2025",
+        "values": [3, 5, 2],
+        "colors": ["#6AB6F0", "#C22D3A", "#68A44A"],
+        "average": "57%"
+      },
+      {
+        "date": "05-10 DEC 2025",
+        "values": [3, 5, 2],
+        "colors": ["#6AB6F0", "#C22D3A", "#68A44A"],
+        "average": "57%"
+      },
+      {
+        "date": "10-15 DEC 2025",
+        "values": [3, 5, 2],
+        "colors": ["#6AB6F0", "#C22D3A", "#68A44A"],
+        "average": "57%"
+      },
+      {
+        "date": "15-20 DEC 2025",
+        "values": [3, 5, 2],
+        "colors": ["#6AB6F0", "#C22D3A", "#68A44A"],
+        "average": "57%"
+      },
+      {
+        "date": "20-25 DEC 2025",
+        "values": [3, 5, 2],
+        "colors": ["#6AB6F0", "#C22D3A", "#68A44A"],
+        "average": "57%"
+      }
+    ]
+  }
+}
