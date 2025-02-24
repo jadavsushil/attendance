@@ -5,10 +5,10 @@ import 'dart:convert';
 class AttendanceRemoteDataSource {
   Future getAttendance(Map<String, dynamic> jsonData) async {
     try {
-      final response = await http.get(
+      final response = await http.post(
         Uri.parse('${AppConstant.baseUrl}${AppConstant.getAttendance}'),
         headers: {"Content-Type": "application/json"},
-        // body: json.encode(jsonData),
+        body: json.encode(jsonData),
       );
       if (response.statusCode == 200) {
         final data = json.decode(response.body);

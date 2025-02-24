@@ -56,16 +56,30 @@ class _AttendanceAnaliticsState extends State<AttendanceAnalitics> {
                               onRotate: controller.toggleRotation1,
                               headerText: "Daily attendance",
                               rotation: controller.rotation1),
-                          CustomBarChart(
-                            title: "Daily attendance",
-                            chartKey: "daily",
-                            rotation: controller.rotation1.value,
-                            attendanceResponse: controller.attendance.value,
-                            attendacneData: controller.attendance.value?.daily,
-                            onGroupButtonClick: (value) {
-                              controller.filterData('daily', value['daily']);
-                            },
-                            onRotationClick: controller.toggleRotation1,
+                          Stack(
+                            alignment: Alignment.center,
+                            children: [
+                              CustomBarChart(
+                                title: "Daily attendance",
+                                chartKey: "daily",
+                                rotation: controller.rotation1.value,
+                                attendanceResponse: controller.attendance.value,
+                                attendacneData:
+                                    controller.attendance.value?.daily,
+                                onGroupButtonClick: (value) {
+                                  controller.filterData(
+                                      'daily', value['daily']);
+                                },
+                                onRotationClick: controller.toggleRotation1,
+                              ),
+                              if (controller.isLoading.value)
+                                Positioned.fill(
+                                  top: 70,
+                                  child: Center(
+                                    child: CircularProgressIndicator(),
+                                  ),
+                                ),
+                            ],
                           ),
                         ],
                       );
@@ -89,16 +103,30 @@ class _AttendanceAnaliticsState extends State<AttendanceAnalitics> {
                             headerText: "Weekly attendance",
                             rotation: controller.rotation2,
                           ),
-                          CustomBarChart(
-                            title: "Weekly attendance",
-                            chartKey: "weekly",
-                            rotation: controller.rotation2.value,
-                            attendanceResponse: controller.attendance.value,
-                            attendacneData: controller.attendance.value?.weekly,
-                            onGroupButtonClick: (value) {
-                              controller.filterData('weekly', value['weekly']);
-                            },
-                            onRotationClick: controller.toggleRotation2,
+                          Stack(
+                            alignment: Alignment.center,
+                            children: [
+                              CustomBarChart(
+                                title: "Weekly attendance",
+                                chartKey: "weekly",
+                                rotation: controller.rotation2.value,
+                                attendanceResponse: controller.attendance.value,
+                                attendacneData:
+                                    controller.attendance.value?.weekly,
+                                onGroupButtonClick: (value) {
+                                  controller.filterData(
+                                      'weekly', value['weekly']);
+                                },
+                                onRotationClick: controller.toggleRotation2,
+                              ),
+                              if (controller.isLoading.value)
+                                Positioned.fill(
+                                  top: 70,
+                                  child: Center(
+                                    child: CircularProgressIndicator(),
+                                  ),
+                                ),
+                            ],
                           ),
                         ],
                       );

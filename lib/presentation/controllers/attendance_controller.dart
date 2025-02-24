@@ -1,6 +1,7 @@
 import 'package:attendence_app/domain/entities/attendance.dart';
 import 'package:attendence_app/domain/usecases/get_attendace.dart';
 import 'package:get/get.dart';
+import 'package:intl/intl.dart';
 
 import '../utils/common_function.dart';
 
@@ -21,41 +22,61 @@ class AttendanceController extends GetxController {
   var startDate = Rxn<DateTime>();
   var endDate = Rxn<DateTime>();
 
+  var selectedStartDate = "".obs;
+  var selectedEndtDate = "".obs;
+
   void onInit() async {
+    selectedPOS.value = "";
+    startDate.value = null;
+    endDate.value = null;
+    selectedStartDate.value = "";
+    selectedEndtDate.value = "";
     await fetchAttendance();
+    super.onInit();
+  }
+
+  void initalizeSelectedGroups() {
     initializeSelectedGroups("daily", attendance.value?.groupData ?? []);
     initializeSelectedGroups("weekly", attendance.value?.groupData ?? []);
-    super.onInit();
   }
 
   void setDateRange(DateTime start, DateTime end) {
     startDate.value = start;
     endDate.value = end;
-    // fetchAttendanceWithFilter();
+    selectedStartDate.value = startDate.value != null
+        ? DateFormat('yyyy-MM-dd').format(startDate.value!)
+        : '';
+    selectedEndtDate.value = endDate.value != null
+        ? DateFormat('yyyy-MM-dd').format(endDate.value!)
+        : '';
+    fetchAttendance();
   }
 
-  changePos(selecteValue) {
-    selectedPOS.value = selecteValue;
-    print('changed pos ${selectedPOS.value}');
+  changePos(selecteValue) async {
+    selectedPOS.value = selecteValue.toString();
+    await fetchAttendance();
   }
 
   void clearDateRange() {
     startDate.value = null;
     endDate.value = null;
+    selectedStartDate.value = "";
+    selectedEndtDate.value = "";
     fetchAttendance();
   }
 
   void toggleSelection(String chartKey, String title) {
     selectedGroups.update(chartKey, (existingSet) {
+      print('existing set ${existingSet}');
       if (existingSet.contains(title)) {
         if (existingSet.length > 1) {
-          existingSet.remove(title); // Remove only if more than one remains
+          existingSet.remove(title);
         }
       } else {
-        existingSet.add(title); // Select
+        existingSet.add(title);
       }
       return existingSet;
-    }); // Create a new set if it doesn't exist
+    });
   }
 
   bool isSelected(String chartKey, String title) {
@@ -76,39 +97,20 @@ class AttendanceController extends GetxController {
 
   Future<void> fetchAttendance() async {
     try {
-      selectedPOS.value = "";
-      isLoading(true);
-
-      Map<String, dynamic> jsonData = {};
-      final AttendanceResponseEntity result =
-          await getAttendance.execute(jsonData);
-
-      AttendanceResponseEntity updatedResult = updateAttendanceData(result);
-
-      attendanceCopy.value = updatedResult;
-      attendance.value = updatedResult;
-    } finally {
-      isLoading(false);
-    }
-  }
-
-  Future<void> fetchAttendanceWithFilter() async {
-    try {
-      selectedPOS.value = "";
       isLoading(true);
 
       Map<String, dynamic> jsonData = {
-        "start_date": startDate.value,
-        "end_date": endDate.value
+        "start_date": selectedStartDate.value,
+        "end_date": selectedEndtDate.value,
+        "pos_id": selectedPOS.value
       };
+      print('json data ${jsonData}');
       final AttendanceResponseEntity result =
           await getAttendance.execute(jsonData);
-      print('response data ${result}');
-
       AttendanceResponseEntity updatedResult = updateAttendanceData(result);
-
       attendanceCopy.value = updatedResult;
       attendance.value = updatedResult;
+      initalizeSelectedGroups();
     } finally {
       isLoading(false);
     }

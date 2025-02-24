@@ -1,4 +1,4 @@
 class AppConstant {
-  static String baseUrl = 'http://116.74.77.251/';
-  static String getAttendance = 'attendance.json';
+  static String baseUrl = 'http://engineers.api.staging.securemetasys.com/api/';
+  static String getAttendance = 'get_attendance';
 }
