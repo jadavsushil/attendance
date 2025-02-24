@@ -12,7 +12,6 @@ class AttendanceAnalitics extends StatefulWidget {
 }
 
 class _AttendanceAnaliticsState extends State<AttendanceAnalitics> {
-  String dateRangeText = "Date";
   final AttendanceController controller = Get.find();
   @override
   Widget build(BuildContext context) {
